@@ -6,9 +6,15 @@ import { authRouter } from "../routes/authRoutes.js";
 import { taskRouter } from "../routes/taskRoutes.js";
 import { routineRouter } from "../routes/routineRoutes.js";
 
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 // dotenv config
-dotenv.config();
-const PORT = process.env.PORT;
+dotenv.config({ path: path.join(__dirname, '../config/.env') });
+const PORT = process.env.PORT || 5000;
 
 // Initialize express app
 const app = express();
@@ -16,7 +22,7 @@ const app = express();
 // Intialize cors
 app.use(
   cors({
-    origin: "https://dailyforge-frontend-lhjq.onrender.com",
+    origin: ["http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "https://dailyforge-frontend-lhjq.onrender.com"],
     credentials: true,
   })
 );

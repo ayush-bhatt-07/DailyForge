@@ -1,0 +1,42 @@
+export const ambientSounds = [
+  {
+    id: "space",
+    name: "Space Drift",
+    icon: "🌌",
+    url: "/sounds/space.mp3",
+    tagline: "floating through the cosmos",
+    color: "purple",
+  },
+  {
+    id: "train",
+    name: "Night Train",
+    icon: "🚆",
+    url: "/sounds/train.mp3",
+    tagline: "somewhere between destinations",
+    color: "slate",
+  },
+  {
+    id: "forest",
+    name: "Forest Cabin",
+    icon: "🌲",
+    url: "/sounds/forest.mp3",
+    tagline: "breathing with the trees",
+    color: "green",
+  },
+  {
+    id: "magic",
+    name: "Magic Realm",
+    icon: "🪄",
+    url: "/sounds/magic.mp3",
+    tagline: "enroute hogwarts",
+    color: "pink",
+  },
+  {
+    id: "anime",
+    name: "Wisteria Night",
+    icon: "🌸",
+    url: "/sounds/anime.mp3",
+    tagline: "quiet nights under soft petals",
+    color: "indigo",
+  },
+];

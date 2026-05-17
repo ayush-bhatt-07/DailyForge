@@ -8,9 +8,11 @@ import ProtectedRoutes from "./components/ProtectedRoutes.jsx";
 import Tasks from "./pages/Tasks.jsx";
 import RoutineBuilder from "./pages/RoutineBuilder.jsx";
 import Footer from "./components/Footer.jsx";
+import AmbientPanel from "./components/FocusMode/AmbientPanel.jsx";
 
 const App = () => {
   return (
+    
     <BrowserRouter>
       <Navbar />
       <main className="app-bg min-h-screen pt-15 flex justify-center items-center">
@@ -18,35 +20,17 @@ const App = () => {
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoutes>
-                <Dashboard />
-              </ProtectedRoutes>
-            }
-          />
-          <Route
-            path="/tasks"
-            element={
-              <ProtectedRoutes>
-                <Tasks />
-              </ProtectedRoutes>
-            }
-          />
-          <Route
-            path="/routine-builder"
-            element={
-              <ProtectedRoutes>
-                <RoutineBuilder />
-              </ProtectedRoutes>
-            }
-          />
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/tasks" element={<Tasks />} />
+            <Route path="/routine-builder" element={<RoutineBuilder />} />
+          </Route>
         </Routes>
       </main>
+      <AmbientPanel />
       <Footer />
     </BrowserRouter>
-    
+
   );
 };
 
